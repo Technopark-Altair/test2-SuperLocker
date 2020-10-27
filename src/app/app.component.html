@@ -1,13 +1,23 @@
 <div class="body">
-    <h1 class="pageHead">Калькулятор</h1>
-    <input [(ngModel)]="firstOperand" type="number" class="firstOperand">
-    <select [(ngModel)]="operator" class="Operator">
-        <option value="-">-</option>
-        <option value="+">+</option>
-        <option value="/">/</option>
-        <option value="*">*</option>
+    <h1 class="pageHead">Калькулятор логических выражений</h1>
+    <select [(ngModel)]="otric" class="Otric">
+        <option value="null"> </option>
+        <option value="otr">!</option>
     </select>
-    <input [(ngModel)]="secondOperand" type="number" class="secondOperator">
+    <p class="Skobka">(</p>
+    <select [(ngModel)]="firstOperand" class="firstOperand">
+        <option value="False">0</option>
+        <option value="True">1</option>
+    </select>
+    <select [(ngModel)]="operator" class="Operator">
+        <option value="and">&&</option>
+        <option value="or">||</option>
+    </select>
+    <select [(ngModel)]="secondOperand" class="secondOperand">
+        <option value="False">0</option>
+        <option value="True">1</option>
+    </select>
+    <p class="Skobkaa">)</p>
     <input (click)="doCalc()" type="submit" value="Подтвердить" class="button" class="Submit">
     <p class="Result">Результат: {{ result }}</p>
     <p class="Failure">Текст ошибки: {{ errorMessage }}</p>

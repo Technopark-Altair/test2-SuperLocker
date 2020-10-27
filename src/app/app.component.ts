@@ -1,3 +1,4 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,40 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hmm';
-  firstOperand: number;
-  secondOperand: number;
+  title = "Calculator";
+  otric:string;
+  firstOperand: Boolean;
+  secondOperand: Boolean;
   operator: string;
-  result: number;
+  result: Boolean;
   errorMessage: string;
   doCalc(){
-    if (this.firstOperand != null && this.secondOperand != null && this.operator != null) {
-      if (this.operator == '-') {
-        this.result = this.firstOperand - this.secondOperand;
-        this.errorMessage = 'Нет ошибки';
-      } else if (this.operator == '+') {
-        this.result = this.firstOperand + this.secondOperand;
-        this.errorMessage = 'Нет ошибки';
-      } else if (this.operator == '/') {
-        if (this.secondOperand == 0) {
-          this.errorMessage = 'На ноль делить нельзя';
-          this.result = null;
-        } else {
-          this.result = this.firstOperand / this.secondOperand
-          this.errorMessage = 'Нет ошибки';
+    if(this.otric=='otr'){
+      if(this.operator=="and"){
+      this.result=this.firstOperand&&this.secondOperand;
+      this.result=!this.result
+      }
+      else if (this.operator=="or") {
+        this.result=this.firstOperand||this.secondOperand;
+        this.result=!this.result
+      } else {
+        this.errorMessage='Что-то пошло не так'
+      }
+    }else{
+      if(this.operator=="and"){
+        this.result=this.firstOperand&&this.secondOperand;
         }
-      } else if (this.operator == '*') {
-        this.result = this.firstOperand * this.secondOperand;
-        this.errorMessage = 'Нет ошибки';
-      }
-    } else {
-      if (this.firstOperand == null) {
-        this.errorMessage = 'Нет первого операнда';
-      } else if (this.secondOperand == null) {
-        this.errorMessage = 'Нет второго операнда';
-      } else if (this.operator == null) {
-        this.errorMessage = 'Нет оператора действия';
-      }
+        else if (this.operator=="or") {
+          this.result=this.firstOperand||this.secondOperand;
+        } else {
+          this.errorMessage='Что-то пошло не так'
+        }
     }
   }
 }

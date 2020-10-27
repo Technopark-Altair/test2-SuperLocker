@@ -1,13 +1,13 @@
 .body { 
     display: grid;
     grid-template-areas: 
-      "header header header"
-      "opone op optwo"
-      "submit submit submit"
-      "res res res"
-      "fail fail fail";
-    grid-template-rows:5em 100px 100px 1em 1em;  
-    grid-template-columns: 45% 10% 45%;
+      "header header header header header header"
+      "otr skob opone op optwo skobb"
+      "submit submit submit submit submit submit"
+      "res res res res res res"
+      "fail fail fail fail fail fail";
+    grid-template-rows:5em 100px 100px 2em 2em;  
+    grid-template-columns: 10% 1% 39% 10% 39% 1%;
     grid-row-gap: 5px;
     grid-column-gap: 2px;
     height: 100vh;
@@ -16,13 +16,9 @@
 @media screen and (max-width: 1350px) {
     .body { 
       grid-template-areas: 
-        "header"
-        "opone"
-        "op"
-        "optwo"
-        "submit"
-        "res"
-        "fail";
+        "header header header header header header"
+        "otr skob opone op optwo skobb"
+        "submit submit res res fail fail";
       grid-template-rows: 80px 1fr 70px 1fr 70px;  
       grid-template-columns: 1fr;
    }
@@ -46,7 +42,21 @@
     } 
 .Result { 
     grid-area: res; 
+    font-size: 2em;
+
     } 
-.Failure { 
+.Otric { 
+    grid-area: otr;
+    } 
+.Failure{
     grid-area: fail;
-    } 
+    font-size: 2em;
+    }
+.Skobka{
+    grid-area:skob;
+    font-size: 35px;
+    }
+.Skobkaa{
+    grid-area:skobb;
+    font-size: 35px;
+    }
